@@ -6,11 +6,15 @@
 /*   By: ncaiserm <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:08:45 by ncaiserm          #+#    #+#             */
-/*   Updated: 2017/07/16 17:20:24 by ncaiserm         ###   ########.fr       */
+/*   Updated: 2017/07/21 14:09:14 by ncaiserm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include<unistd.h>
 
-void	ft_putchar(char c);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_putstr(char *str)
 {
@@ -29,11 +33,7 @@ int		main(int argc, char **argv)
 	int i;
 
 	i = argc - 1;
-	while (i > 0)
-	{
 		ft_putstr(argv[i]);
 		ft_putchar('\n');
-		i--;
-	}
 	return (0);
 }
